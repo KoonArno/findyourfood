@@ -1,0 +1,109 @@
+/* Main dropdown styles */
+.navbar-custom .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* Submenu styles */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+}
+
+/* Show submenu only on hover of its parent */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Navbar and menu item styles */
+.navbar-custom {
+    background-color: #FFF0E5, #FFD1DC !important;
+}
+
+.navbar-brand, .nav-link {
+    font-family: 'Glacial Indifference';
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.dropdown-item {
+    font-family: 'Glacial Indifference';
+    color: rgb(0, 0, 0);
+}
+
+.dropdown-menu {
+    background-color:  #fff4e8 !important;
+    min-width: max-content;
+}
+
+.dropdown-item:hover {
+    background-color: #feead5 !important;
+}
+
+/* User icon style */
+.user-icon {
+    position: relative; /* เพิ่ม position: relative */
+}
+
+.user-icon i {
+    font-size: 1.5rem;
+}
+
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%; /* แสดงด้านล่างของ icon */
+    min-width: 200px; /* กำหนดความกว้างขั้นต่ำ */
+    background-color: #FFF0E5 !important;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem; /* เพิ่มระยะห่างจาก icon */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+    z-index: 1000;
+}
+
+.user-dropdown .dropdown-item {
+    padding: 0.5rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.user-dropdown .dropdown-item:hover,
+.user-dropdown .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #FFD1DC !important;
+}
+
+.user-icon:hover .user-dropdown {
+    display: block; /* แสดง dropdown เมื่อ hover */
+}
+
+/* Dropdown arrow */
+.dropdown-submenu > .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow to down when hovering */
+.dropdown-submenu:hover > .dropdown-toggle::after {
+    transform: rotate(-90deg); /* Rotate to point right */
+}

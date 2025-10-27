@@ -1,0 +1,94 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFF0E5, #FFD1DC);
+    overflow-x: hidden;
+    height: 100%; /* ให้ body และ html มีความสูง 100% */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* สไตล์สำหรับ header */
+.navbar {
+    flex-shrink: 0; /* ป้องกันการหดตัวของ navbar */
+}
+
+/* คอนเทนเนอร์หลักที่ครอบ hero */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดให้เนื้อหาอยู่กึ่งกลางตามแนวตั้ง */
+    overflow: hidden; /* ป้องกันการเลื่อนเมื่อเนื้อหาล้น */
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0%;
+    height: 100%; /* ให้ hero มีความสูงเต็มพื้นที่ที่เหลือ */
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    color: #000;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 120%;
+    height: auto;
+    max-height: 80vh; /* จำกัดความสูงของรูปภาพ */
+    object-fit: contain; /* รักษาอัตราส่วนของรูปภาพ */
+}
+
+.text-shadow {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 4px 4px 0px #aaaaaa;
+}
+
+/* Media query สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content, .hero-image {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .text-shadow {
+        font-size: 3rem;
+    }
+
+    .hero-image img {
+        max-height: 50vh;
+    }
+}
